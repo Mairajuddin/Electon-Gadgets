@@ -2,16 +2,27 @@ import { Box, Card, Typography } from "@mui/material";
 import { useState } from "react";
 
 const CardComp = ({ data }) => {
-  const [isHover, setIsHover] = useState(false);
+  // const [isHover, setIsHover] = useState(false);
 
+  const [hoveredCard, setHoveredCard] = useState(null);
+
+  const handleHover = (id) => {
+    setHoveredCard(id);
+  };
+
+  const handleLeave = () => {
+    setHoveredCard(null);
+  };
   const imageSrc = "./Vector.svg";
   const imageCount = 5;
 
   const imageArray = Array.from({ length: imageCount });
   return data.map((item) => (
     <Card
-      onMouseEnter={() => setIsHover(true)}
-      onMouseLeave={() => setIsHover(false)}
+      onMouseEnter={() => handleHover(item.id)}
+      onMouseLeave={handleLeave}
+      // onMouseEnter={() => setIsHover(true)}
+      // onMouseLeave={() => setIsHover(false)}
       key={item.id}
       sx={{
         height: "250px",
@@ -32,7 +43,7 @@ const CardComp = ({ data }) => {
           style={{ height: "100px", width: "140px" }}
         />
       </Box>
-      {!isHover ? (
+      {hoveredCard !== item.id ? (
         <Box>
           <p
             style={{
@@ -63,7 +74,70 @@ const CardComp = ({ data }) => {
           </Box>
         </Box>
       ) : (
-        "hello"
+        <Box mt={3} sx={{ display: "flex", justifyContent: "space-evenly" }}>
+          <Box
+            sx={{
+              p: 1,
+              display: "flex",
+              justifyContent: "space-around",
+              alignItems: "center",
+              backgroundColor: "#87BCD9",
+              borderRadius: "10px",
+              gap: 4,
+            }}
+          >
+            <p
+              style={{
+                fontWeight: 600,
+                fontFamily: "sans-serif",
+                marginLeft: "13px",
+                fontSize: "12px",
+                textAlign: "center",
+              }}
+            >
+              Add to Cart
+            </p>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "22px",
+                width: "22px",
+                backgroundColor: "#EDA415",
+                borderRadius: "50%",
+              }}
+            >
+              <img
+                src="./shopping-cart.svg"
+                style={{
+                  height: "15px",
+                  width: "15px",
+                  cursor: "pointer",
+                }}
+              />
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              backgroundColor: "#87BCD9",
+              borderRadius: "10px",
+            }}
+          >
+            <img
+              src="./eye.svg"
+              style={{
+                margin: "10px",
+                height: "20px",
+                width: "20px",
+                cursor: "pointer",
+              }}
+            />
+          </Box>
+        </Box>
       )}
     </Card>
   ));

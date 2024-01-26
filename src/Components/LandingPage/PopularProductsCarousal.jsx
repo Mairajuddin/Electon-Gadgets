@@ -1,12 +1,11 @@
 import { useState } from "react";
-import { Box, Card, Container, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import {
   productsRow,
   productsRowTwo,
 } from "../../Utils/PopularProductsSectionData";
-import PopularProductTwo from "./PopularProductTwo";
 import CardComp from "./CardComp";
 
 const TopControlPanel = () => {
