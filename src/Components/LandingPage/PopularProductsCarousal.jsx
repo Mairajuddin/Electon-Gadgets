@@ -2,8 +2,12 @@ import { useState } from "react";
 import { Box, Card, Container, Typography } from "@mui/material";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
-import { productsRow } from "../../Utils/PopularProductsSectionData";
+import {
+  productsRow,
+  productsRowTwo,
+} from "../../Utils/PopularProductsSectionData";
 import PopularProductTwo from "./PopularProductTwo";
+import CardComp from "./CardComp";
 
 const TopControlPanel = () => {
   const chipData = ["Cameras", "Laptops", "Tablets", "Mouses"];
@@ -76,83 +80,25 @@ const PopularProductsCarousal = () => {
   return (
     <Container>
       <TopControlPanel />
-      {pageIndex === 0 ? (
-        <Box
-          mt={{ xs: 3, md: 6 }}
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            flexWrap: "wrap",
-            gap: 2,
-          }}
-        >
-          {productsRow.map((item) => (
-            <Card
-              key={item.id}
-              sx={{
-                // mt: 6,
-                height: "250px",
-                width: "250px",
-                display: "flex",
-                flexDirection: "column",
-                border: "1px solid #B6B6B6",
-                borderRadius: "20px",
-                cursor: "pointer",
-                boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
-                mx: 1,
-              }}
-            >
-              <Box
-                p={1}
-                sx={{ display: "flex", justifyContent: "center", mt: 3 }}
-              >
-                <img
-                  src={item.img}
-                  alt="carousal"
-                  style={{ height: "100px", width: "140px" }}
-                />
-              </Box>
-              <Box>
-                <p
-                  //   variant="body2"
-                  style={{
-                    marginLeft: "15px",
-                    fontFamily: "sans-serif",
-                    color: "#1B5A7D",
-                    fontSize: "16px",
-                    fontWeight: 600,
-                  }}
-                >
-                  {item.title}
-                </p>
-                <Typography
-                  ml={2.2}
-                  mt={1}
-                  variant="body2"
-                  sx={{ fontWeight: 600 }}
-                >
-                  $ {item.price}
-                </Typography>
-                <Box sx={{ ml: 2 }}>
-                  {imageArray.map((_, index) => (
-                    <img
-                      key={index}
-                      src={imageSrc}
-                      style={{
-                        marginTop: "10px",
-                        marginInline: "2px",
-                      }}
-                      alt={`carousal-${index}`}
-                    />
-                  ))}
-                </Box>
-              </Box>
-            </Card>
-          ))}
-        </Box>
-      ) : (
-        <PopularProductTwo />
-      )}
+      <Box
+        mt={{ xs: 3, md: 6 }}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          flexWrap: "wrap",
+          gap: 2,
+        }}
+      >
+        <CardComp
+          data={
+            pageIndex === 0
+              ? productsRow
+              : pageIndex === 1
+              ? productsRowTwo
+              : productsRow
+          }
+        />
+      </Box>
       <Box
         sx={{
           display: "flex",
