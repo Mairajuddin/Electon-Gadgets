@@ -5,6 +5,9 @@ import TopBar from "../Components/LandingPage/TopBar";
 import Carousal from "../Components/LandingPage/Carousal";
 import PopularProductsCarousal from "../Components/LandingPage/PopularProductsCarousal";
 import SalesBanner from "../Components/LandingPage/SalesBanner";
+import QuickSelection from "../Components/LandingPage/QuickSelection";
+import Benefits from "../Components/LandingPage/Benefits";
+import Reviews from "../Components/LandingPage/Reviews";
 
 const Home = () => {
   return (
@@ -16,6 +19,9 @@ const Home = () => {
       <Carousal />
       <PopularProductsCarousal />
       <SalesBanner />
+      <QuickSelection />
+      <Benefits />
+      <Reviews />
     </div>
   );
 };
