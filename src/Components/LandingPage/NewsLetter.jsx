@@ -5,7 +5,6 @@ const NewsLetter = () => {
     <Box
       width={"100%"}
       p={5}
-      mb={2}
       sx={{
         display: "flex",
         justifyContent: "center",

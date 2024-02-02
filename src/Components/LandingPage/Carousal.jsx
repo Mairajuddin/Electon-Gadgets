@@ -98,7 +98,7 @@ const Carousal = () => {
     },
   ];
   return (
-    <Container>
+    <Container sx={{ overflow: "hidden" }}>
       <Slider {...settings}>
         {data.map((item) => (
           <Box key={item.id}>
