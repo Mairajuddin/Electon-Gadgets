@@ -1,7 +1,12 @@
 import React from "react";
+import SelectProduct from "../Components/SelectProductsToCart/SelectProduct";
 
 const SelectedProducts = () => {
-  return <div>SelectedProducts</div>;
+  return (
+    <>
+      <SelectProduct />
+    </>
+  );
 };
 
 export default SelectedProducts;
