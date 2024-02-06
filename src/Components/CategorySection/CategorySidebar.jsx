@@ -48,8 +48,7 @@ const CategorySidebar = () => {
     { title: "Out Stock", value: 0 },
   ];
   return (
-    // <Box sx={{ border: "1px solid red" }}>
-    <Box width={280} mx={1}>
+    <Box display={{ xs: "none", md: "block" }} width={280} mx={1} ml={2}>
       <Box
         sx={{
           display: "flex",
@@ -73,13 +72,11 @@ const CategorySidebar = () => {
               disablePadding
               onClick={() => handleGetCategory(item)}
             >
-              {/* <ListItemIcon disablePadding> */}
               <img
                 src="./Rectangle 3.png"
                 alt=""
                 style={{ width: "20px", height: "20px", marginRight: "10px" }}
               />
-              {/* </ListItemIcon> */}
               <Typography
                 sx={{ fontSize: "13px", fontWeight: 700, color: "#222222" }}
               >
@@ -124,7 +121,6 @@ const CategorySidebar = () => {
                   disablePadding
                   onClick={() => handleGetCategory(item)}
                 >
-                  {/* <ListItemIcon disablePadding> */}
                   <img
                     src="./Rectangle 3.png"
                     alt=""
@@ -134,7 +130,6 @@ const CategorySidebar = () => {
                       marginRight: "10px",
                     }}
                   />
-                  {/* </ListItemIcon> */}
                   <Typography
                     sx={{ fontSize: "13px", fontWeight: 700, color: "#222222" }}
                   >
@@ -176,7 +171,6 @@ const CategorySidebar = () => {
           <Box mx={2} my={1}>
             <List disablePadding>
               <ListItem disablePadding>
-                {/* <ListItemIcon disablePadding> */}
                 <img
                   src="./Rectangle 3.png"
                   alt=""
@@ -186,7 +180,6 @@ const CategorySidebar = () => {
                     marginRight: "10px",
                   }}
                 />
-                {/* </ListItemIcon> */}
                 <Typography
                   sx={{ fontSize: "13px", fontWeight: 700, color: "#222222" }}
                 >

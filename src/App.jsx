@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Categories from "./pages/Categories";
 import PrivateRoute from "./hooks/PrivateRoute";
 import MainLayout from "./Layouts/MainLayout";
+import SelectedProducts from "./pages/SelectedProducts";
 
 const App = () => {
   const token = localStorage.getItem("token");
@@ -21,6 +22,7 @@ const App = () => {
               <Route index element={<Home />} />
               <Route path="home" element={<Home />} />
               <Route path="categories" element={<Categories />} />
+              <Route path="select-product" element={<SelectedProducts />} />
             </Route>
           </Route>
         </Routes>

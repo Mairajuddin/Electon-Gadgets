@@ -15,28 +15,28 @@ import Footer from "../Components/LandingPage/Footer";
 import { Box } from "@mui/material";
 
 const Home = () => {
-  let cursor = document.querySelector("#cursor");
-  let blurs = document.querySelector("#cursr-blur");
-  document.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.x - 18 + "px";
-    cursor.style.top = e.y - 18 + "px";
-  });
+  // let cursor = document.querySelector("#cursor");
+  // let blurs = document.querySelector("#cursr-blur");
+  // document.addEventListener("mousemove", (e) => {
+  //   cursor.style.left = e.x - 18 + "px";
+  //   cursor.style.top = e.y - 18 + "px";
+  // });
 
-  function getRandomColor() {
-    const letters = "0123456789ABCDEF";
-    let color = "#";
+  // function getRandomColor() {
+  //   const letters = "0123456789ABCDEF";
+  //   let color = "#";
 
-    for (let i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
+  //   for (let i = 0; i < 6; i++) {
+  //     color += letters[Math.floor(Math.random() * 16)];
+  //   }
 
-    return color;
-  }
+  //   return color;
+  // }
 
-  const colorCursor = getRandomColor();
+  // const colorCursor = getRandomColor();
   return (
     <>
-      <Box
+      {/* <Box
         id="cursor"
         sx={{
           height: "15px",
@@ -46,7 +46,7 @@ const Home = () => {
           zIndex: 10000,
           backgroundColor: colorCursor,
         }}
-      />
+      /> */}
       {/* <TopBar />
       <NavBar />
       <AccessBar /> */}

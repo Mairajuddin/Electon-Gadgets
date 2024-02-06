@@ -1,7 +1,7 @@
 import { Box, Card, Typography } from "@mui/material";
 import { useState } from "react";
 
-const CardComp = ({ data }) => {
+const CardComp = ({ data, width, height, cardMeasure }) => {
   // const [isHover, setIsHover] = useState(false);
 
   const [hoveredCard, setHoveredCard] = useState(null);
@@ -25,8 +25,8 @@ const CardComp = ({ data }) => {
       // onMouseLeave={() => setIsHover(false)}
       key={item.id}
       sx={{
-        height: "250px",
-        width: "250px",
+        height: cardMeasure ? cardMeasure[1] : "250px",
+        width: cardMeasure ? cardMeasure[0] : "250px",
         display: "flex",
         flexDirection: "column",
         border: "1px solid #B6B6B6",
@@ -40,7 +40,10 @@ const CardComp = ({ data }) => {
         <img
           src={item.img}
           alt="carousal"
-          style={{ height: "100px", width: "140px" }}
+          style={{
+            height: height ? "130px" : "100px",
+            width: width ? "170px" : "140px",
+          }}
         />
       </Box>
       {hoveredCard !== item.id ? (
