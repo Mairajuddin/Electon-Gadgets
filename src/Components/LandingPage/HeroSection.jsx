@@ -59,16 +59,14 @@ const HeroSection = () => {
               <Button
                 variant={"contained"}
                 size="large"
-                                onClick={()=>navigate('/select-product')}
-
+                onClick={()=>navigate('/select-product')}
                 sx={{ backgroundColor: "#EDA415", borderRadius: "15px" }}
               >
                 <span>shop now</span>
               </Button>
               <Button
                 size="large"
-                                onClick={()=>navigate('/categories')}
-
+                onClick={()=>navigate('/categories')}
                 sx={{ border: "1px solid #1B5A7D", borderRadius: "15px" }}
               >
                 view more
