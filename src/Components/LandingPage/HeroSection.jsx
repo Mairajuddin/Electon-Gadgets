@@ -1,6 +1,9 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const HeroSection = () => {
+    const navigate=useNavigate()
+
   return (
     <Box
       width={"100%"}
@@ -56,12 +59,16 @@ const HeroSection = () => {
               <Button
                 variant={"contained"}
                 size="large"
+                                onClick={()=>navigate('/select-product')}
+
                 sx={{ backgroundColor: "#EDA415", borderRadius: "15px" }}
               >
                 <span>shop now</span>
               </Button>
               <Button
                 size="large"
+                                onClick={()=>navigate('/categories')}
+
                 sx={{ border: "1px solid #1B5A7D", borderRadius: "15px" }}
               >
                 view more
